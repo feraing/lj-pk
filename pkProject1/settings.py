@@ -15,6 +15,10 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# 蓝鲸注册信息
+APP_ID = 'pk-pro1' # 请在 蓝鲸开发者中心 -》点击应用ID -》基本信息 -》注册信息 中获取你的APP_ID 
+APP_TOKEN = 'e2a82f9f-eba4-459d-9d58-45136df71814' # 请在 蓝鲸开发者中心 -》点击应用ID -》基本信息 -》注册信息 中获取你的APP_TOKEN
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -76,10 +80,18 @@ WSGI_APPLICATION = 'pkProject1.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        # 默认db，主要记录主要和公用信息
+         'default': {
+            'ENGINE': 'django.db.backends.mysql',   # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': '',                    # Or path to database file if using sqlite3.
+            'USER': '',                    
+            'PASSWORD': '',               
+            'HOST': '',                 
+            'PORT': '',                         # Set to empty string for default. Not used with sqlite3.
+            #'OPTIONS':{
+            #    'init_command':'SET storage_engine=INNODB',
+            #},
+        }
 }
 
 

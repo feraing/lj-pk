@@ -83,15 +83,8 @@ WSGI_APPLICATION = 'pkProject1.wsgi.application'
 DATABASES = {
         # 默认db，主要记录主要和公用信息
          'default': {
-            'ENGINE': 'django.db.backends.mysql',   # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': '',                    # Or path to database file if using sqlite3.
-            'USER': '',                    
-            'PASSWORD': '',               
-            'HOST': '',                 
-            'PORT': '',                         # Set to empty string for default. Not used with sqlite3.
-            #'OPTIONS':{
-            #    'init_command':'SET storage_engine=INNODB',
-            #},
+            'ENGINE': 'django.db.backends.sqlite3',   # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
 }
 
